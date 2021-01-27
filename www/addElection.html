@@ -37,13 +37,13 @@
   <link href="./node_modules/datepicker-bootstrap/css/core.css" rel="stylesheet" type="text/css">
   <link href="./node_modules/datepicker-bootstrap/css/datepicker.css" rel="stylesheet" type="text/css">
   <script src="./js/timepicker.js"></script>
- 
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div id="mySidenav" class="sidenav">
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
+      <a href="addElection.html">Add Election</a>
+      <a href="votingPage.html">Vote</a>
+      <a href="index.html">Clients</a>
       <a href="#">Contact</a>
     </div>
 
@@ -53,9 +53,11 @@
       <div class="top-heading">
         <h4>Enter election details</h4>
       </div>
+      <!-- <form action="/" method="post"> -->
+     
       <div class="add-election-details">
           <label for="election-title">Title</label>
-          <input id="election-title" class="form-control" type="text" placeholder="title of election.." >
+          <input  id="election-title" class="form-control" type="text" placeholder="title of election.." >
           <label for="election-description">Description</label>
           <input id="election-description" class="form-control" type="text" placeholder="description of election.." >
           <div class="container">
@@ -68,8 +70,8 @@
           </script> 
                 </div>
                 <div class="col-xm-6">
-                    <label for="timepicker">Time</label>
-                    <input id="timepicker" class="form-control example" type="text" />
+                    <label for="starttimepicker">Time</label>
+                    <input id="starttimepicker" class="form-control example" type="text" />
                     <script>
                         $(".example").timepicker();
                     </script>
@@ -84,8 +86,8 @@
           </script> 
                 </div>
                 <div class="col-xm-6">
-                    <label for="timepicker">Time</label>
-                    <input id="timepicker" class="form-control example" type="text" />
+                    <label for="endtimepicker">Time</label>
+                    <input id="endtimepicker" class="form-control example" type="text" />
                     <script>
                         $(".example").timepicker();
                     </script>
@@ -98,15 +100,15 @@
             </div>
             <div class="row">
                 <div  id="course" class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <input class="form-check-input" name="COMP" type="checkbox" id="inlineCheckbox1" value="option1">
                     <label class="form-check-label" for="inlineCheckbox1">COMP</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <input class="form-check-input" name="IT" type="checkbox" id="inlineCheckbox2" value="option2">
                     <label class="form-check-label" for="inlineCheckbox2">IT</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                    <input class="form-check-input" name="MECH" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
                     <label class="form-check-label" for="inlineCheckbox3">MECH</label>
                   </div>
             </div>
@@ -116,33 +118,35 @@
             </div>
             <div class="row">
                 <div  id="course" class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">1</label>
+                    <input class="form-check-input" name="FE" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">FE</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">2</label>
+                    <input class="form-check-input" name="SE" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">SE</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
-                    <label class="form-check-label" for="inlineCheckbox3">3 </label>
+                    <input class="form-check-input"  name="TE"type="checkbox" id="inlineCheckbox3" value="option3" >
+                    <label class="form-check-label" for="inlineCheckbox3">TE</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-                    <label class="form-check-label" for="inlineCheckbox3">4 (disabled)</label>
+                    <input class="form-check-input" name="BE" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                    <label class="form-check-label" for="inlineCheckbox3">BE(disabled)</label>
                   </div>
             </div>
           </div>
           
       </div>
        <div class="add-election-btn">
-        <button class="btn btn-primary" >ADD ELECTION</button>
+        <button  name="addElection" id="addElection" class="btn btn-primary" >ADD ELECTION</button>
        </div>
+      <!-- </form> -->
       
           
     </div>
       
 
     <script src="./js/index.js"></script>
+    <script src="./js/addElection.js"></script>
   </body>
 </html>
